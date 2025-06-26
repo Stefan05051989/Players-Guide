@@ -1,4 +1,4 @@
-package PlayersGuide.HelloWorld;
+package Com_PlayersGuide_KiersStefan.Challenge_01;
 
 /*
 Stefan Kiers
