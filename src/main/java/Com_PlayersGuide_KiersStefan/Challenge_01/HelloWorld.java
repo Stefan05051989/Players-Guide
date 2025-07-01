@@ -10,6 +10,7 @@ Stefan Kiers
 public class HelloWorld {
     public static void main(String[] args) {
         String hello = "Hello Other World" + "\n";
-        System.out.println(hello.repeat (5 ));
+        System.out.print(hello.repeat (5 ));
+        System.out.println("Hello\nWorld"); // \n = new line inside statement.
     }
 }
