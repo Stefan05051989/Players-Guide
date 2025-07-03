@@ -14,7 +14,7 @@ Stefan Kiers
 public class RepairingTheClocktower {
     public static void main(String[] args) {
         // import class NumberInRange to ask for user input, declare parameters as 1 to 60 (clock base)
-        int userInput = NumberInRange.AskForNumber("Enter a number between ", 0, " and ", 59, " : ");
+        int userInput = NumberInRange.AskForNumber("Enter number in range : ", -2147483648, 2147483647);
 
         // use if statement to check if condition is odd or even :
         if (userInput % 2 == 0){
