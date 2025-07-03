@@ -16,7 +16,7 @@ public class NumberInRange {
         int input;
         do {
             while (!scanner.hasNextInt()){
-                System.out.println("Invalid input, try again.");
+                System.out.print("Invalid input, try again : ");
                 scanner.next();
             }
             input = scanner.nextInt();
