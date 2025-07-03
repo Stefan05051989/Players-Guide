@@ -10,9 +10,9 @@ Create a method that asks for a number in range, use this method in different cl
 
 
 public class NumberInRange {
-    public static int AskForNumber(String text, int minRange, String text2, int maxRange, String text3) {
+    public static int AskForNumber(String text, int minRange, int maxRange) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print(text + minRange + text2 + maxRange + text3);
+        System.out.print(text);
         int input;
         do {
             while (!scanner.hasNextInt()){
@@ -20,10 +20,14 @@ public class NumberInRange {
                 scanner.next();
             }
             input = scanner.nextInt();
-        }
-        while (input < minRange || input > maxRange);
-        int result = input;
-        System.out.println("Valid input : " + result);
+            if (input < minRange || input > maxRange){
+                System.out.printf("Number must be between %d and %d, try again : ", minRange,maxRange);
+            }while (input < minRange || input > maxRange);
+        }while (input < minRange || input > maxRange);
+        // sout to check if output is valid, works.
+        // System.out.println("Valid input : " + input);
         return input;
+
+
     }
 }
