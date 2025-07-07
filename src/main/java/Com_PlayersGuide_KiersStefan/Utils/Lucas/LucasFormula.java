@@ -41,6 +41,39 @@ public class LucasFormula {
        this makes the formula much more difficult to calculate and this is why recursive is the best option
        for these type of assignments.
 
+
+        lastly :
+        recursion eeds an halting condition, same as a loop.
+        here's another example but with the halting condition :
+
+        public class main
+        psvm
+        int result = sum (5,10);
+        sout -> result.
+
+        ps int sum(int start, int end){
+        if ( end > start){
+        return end + sum (start, end -1);
+        } else {
+        return end;
+
+        loop :
+        sum(start, end)
+        is the end > than start? -> yes.
+        return 10 + sum(5,10)
+
+        output : 45
+        sum :
+        - loop return 5
+        - loop return 6 + (previous) 5 = 11
+        - loop return 7 + (previous) 11 = 18
+        - loop return 8 + (previous) 18 = 26
+        - loop return 9 + (previous) 26 = 35
+        - loop return 10 + (previous) 35 = 45
+        base reached.
+
+        exit loop, return sum
+
          */
     }
 
