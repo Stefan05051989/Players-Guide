@@ -1,6 +1,6 @@
 package Com_PlayersGuide_KiersStefan.Utils.Lucas;
 
-public class Lucas {
+public class LucasFormula {
     // if : input > or = to 2, calculate lucas :
     public static int lucasFormula(int n){
         int Lucas;
