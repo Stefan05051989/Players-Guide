@@ -46,7 +46,7 @@ public class LucasFormula {
         recursion eeds an halting condition, same as a loop.
         here's another example but with the halting condition :
 
-        public class main
+        public class Products
         psvm
         int result = sum (5,10);
         sout -> result.

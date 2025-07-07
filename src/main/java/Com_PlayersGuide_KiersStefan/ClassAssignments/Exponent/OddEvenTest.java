@@ -3,7 +3,7 @@ package Com_PlayersGuide_KiersStefan.ClassAssignments.Exponent;
 Stefan Kiers
 27-06-'25
 
-Method for calculating and displaying an even or odd number for the main assignment in this package.
+Method for calculating and displaying an even or odd number for the Products assignment in this package.
  */
 
 class OddEvenTest {

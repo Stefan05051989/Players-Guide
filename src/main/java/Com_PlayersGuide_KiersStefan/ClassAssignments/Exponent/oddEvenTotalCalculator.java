@@ -5,7 +5,7 @@ Stefan Kiers
 27 -6 -'25
 
 Method for calculating the sum of even and odd numbers,
-created in the main method for this assignment.
+created in the Products method for this assignment.
  */
 
 class oddEvenTotalCalculator {

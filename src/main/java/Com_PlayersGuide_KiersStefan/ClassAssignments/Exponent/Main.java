@@ -46,7 +46,7 @@ public class Main {
         OddEvenTest.isOdd(result);
 
         // display odd and even total calculator.
-        // class / method / parameter (outcome of main method from Math.pow)
+        // class / method / parameter (outcome of Products method from Math.pow)
         oddEvenTotalCalculator.oddEvenTotalCode(result);
         scanner.close();
     }
