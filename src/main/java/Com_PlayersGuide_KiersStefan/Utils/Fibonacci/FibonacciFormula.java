@@ -32,6 +32,8 @@ public class FibonacciFormula {
             // current number = previous 2 added together!
             // if it would not, you would have 3 different for loops with 3 different calculations
             Fibonacci = fibonacci(n - 1) + fibonacci(n - 2);
+
+            // Since the function does not call itself when n is 0, the program stops there and returns the result.
         }
         return Fibonacci;
     }
