@@ -79,8 +79,8 @@ public class TheDominionOfKings {
             }
         }
         // scanner was closing in the wrong part of the program, therefore it gave this exception / error :
-        // Exception in thread "main" java.lang.IllegalStateException: Scanner closed
-        // placed the scanner at the correct position (inside main instead of while loop.
+        // Exception in thread "Exponent" java.lang.IllegalStateException: Scanner closed
+        // placed the scanner at the correct position (inside Exponent instead of while loop.
         scanner.close();
     }
 }

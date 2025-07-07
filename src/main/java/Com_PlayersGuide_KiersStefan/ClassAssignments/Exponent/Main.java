@@ -48,7 +48,6 @@ public class Main {
         // display odd and even total calculator.
         // class / method / parameter (outcome of main method from Math.pow)
         oddEvenTotalCalculator.oddEvenTotalCode(result);
-
         scanner.close();
     }
 }
