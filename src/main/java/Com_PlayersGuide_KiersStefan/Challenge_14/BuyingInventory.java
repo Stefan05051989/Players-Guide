@@ -1,7 +1,9 @@
 package Com_PlayersGuide_KiersStefan.Challenge_14;
+import static Com_PlayersGuide_KiersStefan.Utils.DiscountCalculator.DiscountCalculator.ApplyDiscount;
+import static Com_PlayersGuide_KiersStefan.Utils.DiscountCalculator.DiscountCalculator.employeeDiscount;
 import Com_PlayersGuide_KiersStefan.Utils.GrocerieList.Products;
-import Com_PlayersGuide_KiersStefan.Utils.makeChoice.MakeChoice;
 import java.util.Scanner;
+
 
 
 /*
@@ -42,12 +44,20 @@ public class BuyingInventory {
         // import scanner
         Scanner scanner = new Scanner(System.in);
         // boolean for wrapping method while shopping = true.
-        boolean continueShopping = true;
+        // boolean continueShopping = true;
+        boolean discountStaff = true;
 
         // welcome message
         System.out.println("Welcome to the shop.");
-        System.out.println("What items would you like to see : ");
 
+        System.out.println("Enter your name : ");
+        String employeeName = scanner.nextLine();
+        // 15 : Adjust program to calculate 50% discount if user is shop staff.
+        int discountPercentage = employeeDiscount(employeeName);
+        System.out.println(discountPercentage);
+
+
+        System.out.println("What items would you like to see : ");
         // instantiate and call products method :
         Products products = new Products();
         products.showProducts();
@@ -55,7 +65,7 @@ public class BuyingInventory {
 
         // boolean for repeating proces of asking to view item :
         //
-        while (continueShopping){
+        while (true){
             System.out.println("What item would you like to see the price of (select number) : ");
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -66,7 +76,9 @@ public class BuyingInventory {
             // Convert result to let the String take the value of int and print (parsing)
             // discription value.of : Returns the string representation of the int argument.
             //The representation is exactly the one returned by the Integer.toString method of one argument.
-            String result = String.valueOf(MakeChoice.getPrice(choice));
+            // String result = String.valueOf(MakeChoice.getPrice(choice));
+            double price = Products.getPrice(choice);
+            double result = ApplyDiscount(discountPercentage, price);
             System.out.println(result);
 
             // check if user wants to see another item :
@@ -76,9 +88,11 @@ public class BuyingInventory {
             // loop for response and check if user wishes to continue.
             if (anotherItem.equalsIgnoreCase("N")){
                 // insert boolean to exit the program!
-                continueShopping = false;
+                // continueShopping = false;
                 // close off.
                 System.out.println("Thanks for visiting the store.");
+                // break gebruiken om uit de loop te komen, boolean CS niet nodig, CS = true in while)
+                break;
             }else {
                 // display items again when user ask for another look.
                 products.showProducts();

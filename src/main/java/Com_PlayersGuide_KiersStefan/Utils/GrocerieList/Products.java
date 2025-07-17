@@ -1,4 +1,5 @@
 package Com_PlayersGuide_KiersStefan.Utils.GrocerieList;
+
 import java.util.LinkedList;
 /*
 Stefan Kiers
@@ -25,9 +26,11 @@ The LL has a few different methods to adjust the LL more efficiently ;
 public class Products {
     // make list private so nobody can change it.
     LinkedList<String> productList;
+
     // method declaration
     public Products() {
         //declare list and add products :
+        // geen reden voor LL, beter arraylist. (hardware geoptimaliseerd voor AL)
         productList = new LinkedList<>();
         productList.add("0 : TEST");
         productList.add("1 : Rope.");
@@ -39,12 +42,34 @@ public class Products {
         productList.add("7 : Food Supplies.");
 
     }
-    public void showProducts(){
+
+    public static int getPrice(int choice) {
+        switch (choice) {
+            case 1:
+                return 10;
+            case 2:
+                return 15;
+            case 3:
+                return 25;
+            case 4, 7:
+                return 1;
+            case 5:
+                return 20;
+            case 6:
+                return 200;
+            default:
+                System.out.println("Input unknown, choose items from list 1 to 7 : ");
+                return 0;
+        }
+    }
+
+    public void showProducts() {
         System.out.println("Items available : ");
-        for (String product : productList){
+        for (String product : productList) {
             System.out.println(product);
         }
     }
+
     /*
     Override in java occurs when a childclass Overrides(!) a method that is allready defined in the parentclass.
     When a childclass provides its own version of the method in the parentclass, it's known as @Override.
@@ -67,7 +92,7 @@ public class Products {
         stringBuilder.append("Products available : ");
         // enhanced for loop :
         // Takes each item from the product list one at a time.
-        for (String product : productList){
+        for (String product : productList) {
             // add each product + new line every time (method chain)
             stringBuilder.append(product).append("\n");
         }
