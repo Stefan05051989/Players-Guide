@@ -25,7 +25,7 @@ import java.util.Scanner;
 
 public class PrintArray {
     public static void main(String[] args) {
-        // call / instatiate method + signature from Natural number classs
+        // call  method + signature from Natural number classs
         ArrayList<Integer> userInput = NaturalPositiveNumber.AskPositiveNumber();
         // print array to string method for printing as array
         Integer[] array = userInput.toArray(userInput.toArray(new Integer[0]));
