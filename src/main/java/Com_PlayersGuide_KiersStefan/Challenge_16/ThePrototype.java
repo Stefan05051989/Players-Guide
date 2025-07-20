@@ -1,5 +1,5 @@
 package Com_PlayersGuide_KiersStefan.Challenge_16;
-import Com_PlayersGuide_KiersStefan.Utils.AskForNumber.NumberInRange;
+import Com_PlayersGuide_KiersStefan.Challenge_20.TakingANumber;
 import Com_PlayersGuide_KiersStefan.Utils.ClearConsole.ClearConsole;
 
 /*
@@ -34,7 +34,7 @@ public class ThePrototype {
 
 
         System.out.println("Fill in the number you want the hunter to guess : ");
-        int numberToGuess = NumberInRange.AskForNumber(0, 100);
+        int numberToGuess = TakingANumber.AskForNumber(0, 100);
         if (numberToGuess > 0 || numberToGuess < 100) {
             System.out.println("Hunter needs to guess : " + numberToGuess);
         }

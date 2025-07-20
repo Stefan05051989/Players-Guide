@@ -1,5 +1,5 @@
 package Com_PlayersGuide_KiersStefan.Challenge_12;
-import Com_PlayersGuide_KiersStefan.Utils.AskForNumber.NumberInRange;
+import Com_PlayersGuide_KiersStefan.Challenge_20.TakingANumber;
 
 /*
 Stefan Kiers
@@ -15,7 +15,7 @@ public class RepairingTheClocktower {
     public static void main(String[] args) {
         // import class NumberInRange to ask for user input, declare parameters as 1 to 60 (clock base)
         System.out.println("Enter number in range : ");
-        int userInput = NumberInRange.AskForNumber(-2147483648, 2147483647);
+        int userInput = TakingANumber.AskForNumber(-2147483648, 2147483647);
 
         // use if statement to check if condition is odd or even :
         if (userInput % 2 == 0){
