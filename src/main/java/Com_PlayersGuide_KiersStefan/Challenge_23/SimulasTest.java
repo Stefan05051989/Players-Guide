@@ -57,4 +57,9 @@ public class SimulasTest {
             // return; TEST : with return statement, enum is only executed ones!
         }
     }
+    static final class ChestStateClass {
+        enum ChestState {
+            OPEN, CLOSED, LOCKED;
+        }
+    }
 }
