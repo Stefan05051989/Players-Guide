@@ -1,5 +1,4 @@
 package Com_PlayersGuide_KiersStefan.Challenge_20;
-import java.util.Scanner;
 
 /*
 Stefan Kiers
@@ -10,21 +9,43 @@ Should be with text, but kept it dry so text variables can be put in class itsel
 the method.
  */
 
+import java.util.Scanner;
 
 public class TakingANumber {
-    public static int AskForNumber(int baseValue, int maxValue) {
-        Scanner scanner = new Scanner(System.in);
-        int input;
-        do {
-            while (!scanner.hasNextInt()){
-                System.out.print("Invalid input, try again : ");
-                scanner.next();
+    public static Scanner scanner = new Scanner(System.in); // tried scanner in psi AFN but didn't work because of signature.
+    public static int AskForNumber(String text, int baseValue, int maxValue) {
+        int number;
+        boolean onlyPrintOnce = true;
+
+        while (true) {
+            try {
+                // empty parameter.
+                if (onlyPrintOnce) {
+                    if (text == null || text.trim().isEmpty()) {
+                        System.out.println(text + " between " + baseValue + " and " + maxValue + " : ");
+                    } else {
+                        System.out.println("Enter a number between " + baseValue + " and " + maxValue + " : ");
+                    }
+                    onlyPrintOnce = false;
+                }else {
+                    System.out.println(text + " between " + baseValue + " and " + maxValue + " : ");
+                }
+                String input = scanner.nextLine();
+                if (input.trim().isEmpty()) {
+                    System.out.println("No input, check parameters. ");
+                }
+                number = Integer.parseInt(input.trim());
+                if (number >= baseValue && number <= maxValue){
+                    return number;
+                }else {
+                    System.out.println("Invalid input, try again.");
+                }
+            }catch (NumberFormatException e){
+                System.out.println("Invalid input, only use integers between 0 and 100.");
             }
-            input = scanner.nextInt();
-            if (input < baseValue || input > maxValue){
-                System.out.printf("Number must be between %d and %d, try again : ", baseValue, maxValue);
-            }
-        }while (input < baseValue || input > maxValue);
-        return input;
+        }
+    }
+    public static void closeScanner(){
+        scanner.close();
     }
 }
