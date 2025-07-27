@@ -39,8 +39,11 @@ public class SimulasTest {
          */
 
         while (true) {
-            System.out.println("The chest is " + currentState + ". What do you want to do?");
+
+            System.out.println("The chest is " + currentState + "\n What do you want to do? (open, close, lock, unlock)");
             String userInput = scanner.nextLine();
+            System.out.println("User choice : " + userInput.toUpperCase());
+//
 
             if (currentState == ChestStateClass.ChestState.LOCKED && userInput.equals("unlock")) {
                 currentState = ChestStateClass.ChestState.CLOSED;
