@@ -1,11 +1,31 @@
 package Com_PlayersGuide_KiersStefan.Challenge_24;
 
-import Com_PlayersGuide_KiersStefan.Utils.OddEvenTest.Main;
+/*
+Stefan Kiers
+27-07-2025
+
+
+    Define enumerations for the three variations on food: type (soup, stew, gumbo), main ingredient
+    (mushrooms, chicken, carrots, potatoes), and seasoning (spicy, salty, sweet).
+    Make a class to represent a soup composed of the three above enumeration types.
+    Let the user pick a type, main ingredient, and seasoning from the allowed choices and fill the “soup object”
+    with the results. Hint: You could give the user a menu to pick from or simply compare the user’s
+    text input against specific strings to determine which enumeration value represents their choice.
+    When done, display the contents of the soup object in a format like “Sweet Chicken Gumbo.”
+    Hint: You don’t need to convert the enumeration value back to a string. Simply displaying an
+    enumeration value with System.out.print or System.out.printlin will display the name of the enumeration value.
+
+ */
 
 import java.util.Scanner;
 
 public class SimulasSoup {
+
     public static void main(String[] args) {
+        /*
+        enums are special class that represent fixed set of const. (data type like)
+
+         */
         // import scanner
         Scanner userChoice = new Scanner(System.in);
 
@@ -16,20 +36,20 @@ public class SimulasSoup {
         System.out.println("3 : Gumbo");
 
         int typeChoice = userChoice.nextInt();
-        FoodType selectedType;
+        FoodType selectedType; // can only hold Foodtype values (variable declaration)
 
         switch (typeChoice) {
             case 1:
-                selectedType = FoodType.SOUP;
+                selectedType = FoodType.SOUP; // becomes immutable object
                 break;
             case 2:
-                selectedType = FoodType.STEW;
+                selectedType = FoodType.STEW;// becomes immutable object
                 break;
             case 3:
-                selectedType = FoodType.GUMBO;
+                selectedType = FoodType.GUMBO;// becomes immutable object
                 break;
             default:
-                selectedType = FoodType.SOUP;
+                selectedType = FoodType.SOUP;// becomes immutable object
                 break;
         }
         // works : System.out.println(typeChoice);
@@ -41,22 +61,22 @@ public class SimulasSoup {
         System.out.println("4 : Carrots");
 
         int ingredientChoice = userChoice.nextInt();
-        MainIngredient selectedIngredient;
+        MainIngredient selectedIngredient; // can only hold MainIngredient values (variable declaration)
         switch (ingredientChoice) {
             case 1:
-                selectedIngredient = MainIngredient.MUSHROOMS;
+                selectedIngredient = MainIngredient.MUSHROOM;// becomes immutable object
                 break;
             case 2:
-                selectedIngredient = MainIngredient.CHICKEN;
+                selectedIngredient = MainIngredient.CHICKEN;// becomes immutable object
                 break;
             case 3:
-                selectedIngredient = MainIngredient.POTATOES;
+                selectedIngredient = MainIngredient.POTATOE;// becomes immutable object
                 break;
             case 4:
-                selectedIngredient = MainIngredient.CARROTS;
+                selectedIngredient = MainIngredient.CARROT;// becomes immutable object
                 break;
             default:
-                selectedIngredient = MainIngredient.POTATOES;
+                selectedIngredient = MainIngredient.POTATOE;// becomes immutable object
                 break;
         }
         // works : System.out.println(ingredientChoice);
@@ -66,19 +86,19 @@ public class SimulasSoup {
         System.out.println("3 : Sweet");
 
         int seasoningChoice = userChoice.nextInt();
-        Seasoning selectedSeasoning;
+        Seasoning selectedSeasoning; // can only hold Seasoning values (variable declaration)
         switch (seasoningChoice) {
             case 1:
-                selectedSeasoning = Seasoning.SALTY;
+                selectedSeasoning = Seasoning.SALTY;// becomes immutable object
                 break;
             case 2:
-                selectedSeasoning = Seasoning.SPICY;
+                selectedSeasoning = Seasoning.SPICY;// becomes immutable object
                 break;
             case 3:
-                selectedSeasoning = Seasoning.SWEET;
+                selectedSeasoning = Seasoning.SWEET;// becomes immutable object
                 break;
             default:
-                selectedSeasoning = Seasoning.SALTY;
+                selectedSeasoning = Seasoning.SALTY;// becomes immutable object
                 break;
         }
 
@@ -87,37 +107,56 @@ public class SimulasSoup {
         userChoice.close();
 
     }
+    // Create enum
     enum FoodType {
+        // set constants for type dish
         SOUP, STEW, GUMBO;
+        /*
+        Each constant is a "public static final INSTANCE of an enum (in this case foodtype)
+        this is why you cannot instantiate an enum, because it carry's instances of constance.
+        Each enum has three aspects :
+        1 : singleton - only 1 can ever exist.
+        2 : Immutable - cannot be changed (same as strings)
+        3 : type-safe - can only be compared with other values from the same enum
+        (foodtype with foodtype, mainingredient with mainingredient, seasoning with seasoning.
+         */
     }
+    // create enum
     enum MainIngredient {
-        MUSHROOMS, CHICKEN, CARROTS, POTATOES;
+        // set constants for ingredient
+        MUSHROOM, CHICKEN, CARROT, POTATOE;
     }
+    // create enum
     enum Seasoning {
+        // set constants for flavour
         SPICY, SWEET, SALTY;
     }
 
-    static class Soup{
-        private FoodType type;
-        private MainIngredient mainIngredient;
-        private Seasoning seasoning;
+    /*
+    Enums by itself are a group of constants (unchangeble / final variables!)
+    This means that the values of the enum can not be changed, but also that they
+    are instances. Which means you cannot instantiatie an enum to call it and print the content.
+    these have to be handled seperately.
 
-        public Soup(FoodType type, MainIngredient mainIngredient, Seasoning seasoning){
+    Declare general class,
+    declare final Enum + name (Foodtype type)
+
+    create private method with parameters for calling varargs
+    this. etc
+
+    Then override the Enum with a ToString() method to display the formatted print statement.
+    without the to string method, it will print the Hashcode.
+
+     */
+    static class Soup{
+        private final FoodType type;
+        private final MainIngredient mainIngredient;
+        private final Seasoning seasoning;
+
+        private Soup(FoodType type, MainIngredient mainIngredient, Seasoning seasoning){
             this.type = type;
             this.mainIngredient = mainIngredient;
             this.seasoning = seasoning;
-        }
-
-        public FoodType getType() {
-            return type;
-        }
-
-        public MainIngredient getMainIngredient() {
-            return mainIngredient;
-        }
-
-        public Seasoning getSeasoning() {
-            return seasoning;
         }
 
         // format print statement
