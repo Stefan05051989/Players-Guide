@@ -1,7 +1,6 @@
 package Com_PlayersGuide_KiersStefan.Challenge_23;
 import java.util.Scanner;
 
-import static Com_PlayersGuide_KiersStefan.Challenge_20.TakingANumber.scanner;
 
 /*
 Stefan Kiers
@@ -31,38 +30,59 @@ The chest is unlocked. What do you want to do?
 public class SimulasTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ChestStateClass.ChestState currentState = ChestStateClass.ChestState.LOCKED;
+        ChestState currentState = ChestState.LOCKED;
+
         /*
         And enum is a special class (enumerated / ordered listing) that represents a group of constants (final variables).
         To create enum, use the keyword and seperate the constants with a comma.
         all UPPERCASE!
          */
 
-        while (true) {
-
-            System.out.println("The chest is " + currentState + "\n What do you want to do? (open, close, lock, unlock)");
+        while(true) {
+            System.out.println("The chest is " + currentState + "\nWhat do you want to do? (open, close, lock, unlock)");
             String userInput = scanner.nextLine();
             System.out.println("User choice : " + userInput.toUpperCase());
-//
 
-            if (currentState == ChestStateClass.ChestState.LOCKED && userInput.equals("unlock")) {
-                currentState = ChestStateClass.ChestState.CLOSED;
+            if (currentState == ChestState.LOCKED && userInput.equals("unlock")) {
+                currentState = ChestState.CLOSED;
             }
-            if (currentState == ChestStateClass.ChestState.CLOSED && userInput.equals("open")) {
-                currentState = ChestStateClass.ChestState.OPEN;
+            else if (currentState == ChestState.CLOSED && userInput.equals("open")) {
+                currentState = ChestState.OPEN;
             }
-            if (currentState == ChestStateClass.ChestState.OPEN && userInput.equals("close")) {
-                currentState = ChestStateClass.ChestState.CLOSED;
+            else if (currentState == ChestState.OPEN && userInput.equals("close")) {
+                currentState = ChestState.CLOSED;
             }
-            if (currentState == ChestStateClass.ChestState.CLOSED && userInput.equals("lock")) {
-                currentState = ChestStateClass.ChestState.LOCKED;
+            else if(currentState == ChestState.CLOSED && userInput.equals("lock")) {
+                currentState = ChestState.LOCKED;
             }
-            // return; TEST : with return statement, enum is only executed ones!
-        }
-    }
-    static final class ChestStateClass {
-        enum ChestState {
-            OPEN, CLOSED, LOCKED;
+             //return; TEST : with return statement, enum is only executed ones!
         }
     }
 }
+enum ChestState {
+    OPEN("open"), CLOSED("closed"), LOCKED("locked");
+
+    private String description;
+    private ChestState(String description){
+        this.description = description;
+    }
+}
+
+class ChestStateTwo{
+    public static final ChestStateTwo OPEN = new ChestStateTwo("open", 1);
+    public static final ChestStateTwo CLOSED = new ChestStateTwo("closed", 2);
+    public static final ChestStateTwo LOCKED = new ChestStateTwo("locked", 3);
+
+    private String state;
+    private int priority;
+    private ChestStateTwo(String state, int priority) {
+        this.state = state;
+        this.priority = priority;
+    }
+    @Override
+    public String toString(){
+        return state;
+    }
+}
+
+
