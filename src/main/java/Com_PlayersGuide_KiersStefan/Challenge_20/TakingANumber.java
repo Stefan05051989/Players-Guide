@@ -12,40 +12,23 @@ the method.
 import java.util.Scanner;
 
 public class TakingANumber {
-    public static Scanner scanner = new Scanner(System.in); // tried scanner in psi AFN but didn't work because of signature.
-    public static int AskForNumber(String text, int baseValue, int maxValue) {
-        int number;
-        boolean onlyPrintOnce = true;
+    public static int AskForNumber(String text, Integer baseValue, Integer maxValue) {
+        Scanner scanner = new Scanner(System.in);
+        int inputInteger;
 
-        while (true) {
-            try {
-                // empty parameter.
-                if (onlyPrintOnce) {
-                    if (text == null || text.trim().isEmpty()) {
-                        System.out.println(text + " between " + baseValue + " and " + maxValue + " : ");
-                    } else {
-                        System.out.println("Enter a number between " + baseValue + " and " + maxValue + " : ");
-                    }
-                    onlyPrintOnce = false;
-                }else {
-                    System.out.println(text + " between " + baseValue + " and " + maxValue + " : ");
-                }
-                String input = scanner.nextLine();
-                if (input.trim().isEmpty()) {
-                    System.out.println("No input, check parameters. ");
-                }
-                number = Integer.parseInt(input.trim());
-                if (number >= baseValue && number <= maxValue){
-                    return number;
-                }else {
-                    System.out.println("Invalid input, try again.");
-                }
-            }catch (NumberFormatException e){
-                System.out.println("Invalid input, only use integers between 0 and 100.");
+        do {
+            System.out.println(text + baseValue + " to " + maxValue + " : ");
+            inputInteger = scanner.nextInt();
+
+            if (inputInteger < baseValue || inputInteger > maxValue) {
+                System.err.println("Invalid input, try again.");
             }
+//        while (inputInteger < baseValue || inputInteger > maxValue);
+//        scanner.close();
+//        return inputInteger;
         }
-    }
-    public static void closeScanner(){
+        while (inputInteger < baseValue || inputInteger > maxValue);
         scanner.close();
+        return inputInteger;
     }
 }

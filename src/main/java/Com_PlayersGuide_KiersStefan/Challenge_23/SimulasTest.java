@@ -1,11 +1,9 @@
 package Com_PlayersGuide_KiersStefan.Challenge_23;
 import java.util.Scanner;
 
-
 /*
 Stefan Kiers
 21-07-'25
-
 
 The chest is a small box you can hold in your hand. The lid can be open, closed (but unlocked), or locked.
 You’d normally be able to go between these states, opening, closing, locking, and unlocking the box, but
@@ -30,7 +28,7 @@ The chest is unlocked. What do you want to do?
 public class SimulasTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        ChestState currentState = ChestState.LOCKED;
+        ChestState currentState = ChestState.valueOf(ChestState.LOCKED.toString());
 
         /*
         And enum is a special class (enumerated / ordered listing) that represents a group of constants (final variables).
@@ -69,6 +67,7 @@ enum ChestState {
 }
 
 class ChestStateTwo{
+    // this is how an enum looks in the background
     public static final ChestStateTwo OPEN = new ChestStateTwo("open", 1);
     public static final ChestStateTwo CLOSED = new ChestStateTwo("closed", 2);
     public static final ChestStateTwo LOCKED = new ChestStateTwo("locked", 3);
@@ -81,7 +80,7 @@ class ChestStateTwo{
     }
     @Override
     public String toString(){
-        return state;
+        return state.toLowerCase();
     }
 }
 

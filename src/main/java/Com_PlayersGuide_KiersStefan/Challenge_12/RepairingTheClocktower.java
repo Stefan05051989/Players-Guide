@@ -15,11 +15,12 @@ public class RepairingTheClocktower {
     public static void main(String[] args) {
         // import class NumberInRange to ask for user input, declare parameters as 1 to 60 (clock base)
         System.out.println("Repairing the Clocktower.");
-        System.out.println("Check if a number is even or odd (0 to 60)");
-        int userInput = TakingANumber.AskForNumber("Enter number in range : ", 0, 60);
+        System.out.println("Check if a number is even or odd.");
+
+        int inputInteger = TakingANumber.AskForNumber("Enter number in range of ", 0, 60);
 
         // use if statement to check if condition is odd or even :
-        if (userInput % 2 == 0){
+        if (inputInteger % 2 == 0){
             System.out.println("Tick (even)");
         }else {
             System.out.println("Tock (odd)");
