@@ -23,9 +23,6 @@ public class TakingANumber {
             if (inputInteger < baseValue || inputInteger > maxValue) {
                 System.err.println("Invalid input, try again.");
             }
-//        while (inputInteger < baseValue || inputInteger > maxValue);
-//        scanner.close();
-//        return inputInteger;
         }
         while (inputInteger < baseValue || inputInteger > maxValue);
         scanner.close();
