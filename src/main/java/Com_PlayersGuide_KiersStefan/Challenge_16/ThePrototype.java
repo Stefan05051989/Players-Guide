@@ -1,6 +1,7 @@
 package Com_PlayersGuide_KiersStefan.Challenge_16;
+import Com_PlayersGuide_KiersStefan.Challenge_20.TakingANumber;
 import Com_PlayersGuide_KiersStefan.Utils.ClearConsole.ClearConsole;
-import static Com_PlayersGuide_KiersStefan.Challenge_20.TakingANumber.scanner;
+import java.util.Scanner;
 
 /*
 Stefan Kiers
@@ -18,35 +19,55 @@ Loop until they get it right, then end the program.
 
 
 public class ThePrototype {
-    public static void thePrototype(int numberToGuess) {
-        // import scanner
+    public static void main(String[] args) {
+
         // call ask for number in range method, parameters 0 to 100. ( if > 100, keep asking)
-        // clear console (create method, 25 blank lines)
-        // add second user, hunter, to guess numbers.
-        // indicate too high, too low, or correct.
-        // loop until they get it right (while true) then exit.
-        // startvalue (0)
-        ClearConsole.clearConsole();
-        // System.out.print("\033[H\033[2J");
-        // System.out.flush();
+        int numberToGuess = TakingANumber.AskForNumber(new Scanner(System.in),"Enter a number between  ", 0, 100);
+        ClearConsole.clearConsole(); // clear console (create method, 25 blank lines)
+        /*
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+        */
+
+        Scanner scanner = new Scanner(System.in);
+        // Start game.
         System.out.println("The Manticore's ship must be located between 0 and 100!");
         System.out.println("You only have 15 chances before the city is destroyed, good luck!");
         System.out.println("Hunter, guess the location of The Manticore : ");
 
         int userGuess = -1;
-        while (userGuess != numberToGuess) {
+        int attempts = 0;
+
+        while (userGuess != numberToGuess && attempts < 15) {
             System.out.println("Enter your guess : ");
-            if (scanner.hasNextInt()) {
-                userGuess = scanner.nextInt();
-                if (userGuess < numberToGuess) {
-                    System.out.println("Too Low, guess again..");
-                } else if (userGuess > numberToGuess) {
-                    System.out.println("Too high, guess again..");
+            try {
+                if (scanner.hasNextInt()) {
+                    userGuess = scanner.nextInt();
+                    attempts++;
+
+                    if (userGuess < numberToGuess) {
+                        System.out.println("Too Low, guess again..");
+                    } else if (userGuess > numberToGuess) {
+                        System.out.println("Too high, guess again..");
+                    } else {
+                        System.out.println("HIT!");
+                        System.out.println("You brought X damage to The Manticore.");
+                        break;
+                    }
+
                 } else {
-                    System.out.println("HIT!");
-                    System.out.println("You brought X damage to The Manticore.");
+                    System.out.println("Please enter a valid number");
+                    scanner.next(); // consume invalid input the prevent infinite loop.
                 }
+            } catch (Exception e) {
+                System.out.println("input error");
+                scanner = new Scanner(System.in);
             }
         }
+
+        if (attempts <= 15 && userGuess != numberToGuess){
+            System.out.println("the city is destroyed, The Manticore has won..");
+        }
+        scanner.close();
     }
 }

@@ -1,4 +1,5 @@
 package Com_PlayersGuide_KiersStefan.Challenge_20;
+import java.util.Scanner;
 
 /*
 Stefan Kiers
@@ -9,11 +10,8 @@ Should be with text, but kept it dry so text variables can be put in class itsel
 the method.
  */
 
-import java.util.Scanner;
-
 public class TakingANumber {
-    public static int AskForNumber(String text, Integer baseValue, Integer maxValue) {
-        Scanner scanner = new Scanner(System.in);
+    public static int AskForNumber(Scanner scanner, String text, Integer baseValue, Integer maxValue) {
         int inputInteger;
 
         do {
@@ -25,7 +23,7 @@ public class TakingANumber {
             }
         }
         while (inputInteger < baseValue || inputInteger > maxValue);
-        scanner.close();
+        //scanner.close();
         return inputInteger;
     }
 }

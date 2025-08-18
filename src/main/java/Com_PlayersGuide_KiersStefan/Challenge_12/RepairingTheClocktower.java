@@ -1,6 +1,8 @@
 package Com_PlayersGuide_KiersStefan.Challenge_12;
 import Com_PlayersGuide_KiersStefan.Challenge_20.TakingANumber;
 
+import java.util.Scanner;
+
 /*
 Stefan Kiers
 29-06-'25
@@ -17,7 +19,7 @@ public class RepairingTheClocktower {
         System.out.println("Repairing the Clocktower.");
         System.out.println("Check if a number is even or odd.");
 
-        int inputInteger = TakingANumber.AskForNumber("Enter number in range of ", 0, 60);
+        int inputInteger = TakingANumber.AskForNumber(new Scanner(System.in), "hoi", 0, 100);
 
         // use if statement to check if condition is odd or even :
         if (inputInteger % 2 == 0){
