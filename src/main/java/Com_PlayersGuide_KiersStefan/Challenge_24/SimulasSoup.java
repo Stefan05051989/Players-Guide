@@ -2,7 +2,7 @@ package Com_PlayersGuide_KiersStefan.Challenge_24;
 
 /*
 Stefan Kiers
-27-07-2025
+18-08-2025
 
 
     Define enumerations for the three variations on food: type (soup, stew, gumbo), main ingredient
@@ -107,31 +107,6 @@ public class SimulasSoup {
         userChoice.close();
 
     }
-    // Create enum
-    enum FoodType {
-        // set constants for type dish
-        SOUP, STEW, GUMBO;
-        /*
-        Each constant is a "public static final INSTANCE of an enum (in this case foodtype)
-        this is why you cannot instantiate an enum, because it carry's instances of constance.
-        Each enum has three aspects :
-        1 : singleton - only 1 can ever exist.
-        2 : Immutable - cannot be changed (same as strings)
-        3 : type-safe - can only be compared with other values from the same enum
-        (foodtype with foodtype, mainingredient with mainingredient, seasoning with seasoning.
-         */
-    }
-    // create enum
-    enum MainIngredient {
-        // set constants for ingredient
-        MUSHROOM, CHICKEN, CARROT, POTATOE;
-    }
-    // create enum
-    enum Seasoning {
-        // set constants for flavour
-        SPICY, SWEET, SALTY;
-    }
-
     /*
     Enums by itself are a group of constants (unchangeble / final variables!)
     This means that the values of the enum can not be changed, but also that they
@@ -165,4 +140,43 @@ public class SimulasSoup {
             return seasoning + " " + mainIngredient + " " + type;
         }
     }
+}
+// Create enum
+ /*
+    Enums by itself are a group of constants (unchangeble / final variables!)
+    This means that the values of the enum can not be changed, but also that they
+    are instances. Which means you cannot instantiatie an enum to call it and print the content.
+    these have to be handled seperately.
+
+    Declare general class,
+    declare final Enum + name (Foodtype type)
+
+    create private method with parameters for calling varargs
+    this. etc
+
+    Then override the Enum with a ToString() method to display the formatted print statement.
+    without the to string method, it will print the Hashcode.
+
+  */
+enum FoodType {
+    SOUP, STEW, GUMBO;
+        /*
+        Each constant is a "public static final INSTANCE of an enum (in this case foodtype)
+        this is why you cannot instantiate an enum, because it carry's instances of constance.
+        Each enum has three aspects :
+        1 : singleton - only 1 can ever exist.
+        2 : Immutable - cannot be changed (same as strings)
+        3 : type-safe - can only be compared with other values from the same enum
+        (foodtype with foodtype, mainingredient with mainingredient, seasoning with seasoning.
+         */
+}
+// create enum
+enum MainIngredient {
+    // set constants for ingredient
+    MUSHROOM, CHICKEN, CARROT, POTATOE;
+}
+// create enum
+enum Seasoning {
+    // set constants for flavour
+    SPICY, SWEET, SALTY;
 }
