@@ -17,9 +17,9 @@ public class RepairingTheClocktower {
     public static void main(String[] args) {
         // import class NumberInRange to ask for user input, declare parameters as 1 to 60 (clock base)
         System.out.println("Repairing the Clocktower.");
-        System.out.println("Check if a number is even or odd.");
+        //System.out.println("Check if a number is even or odd.");
 
-        int inputInteger = TakingANumber.AskForNumber(new Scanner(System.in), "hoi", 0, 100);
+        int inputInteger = TakingANumber.AskForNumber(new Scanner(System.in), "Check if a number is even or odd from ", 0, 60);
 
         // use if statement to check if condition is odd or even :
         if (inputInteger % 2 == 0){
