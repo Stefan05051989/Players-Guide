@@ -16,7 +16,7 @@ public class NumberInRange {
         // scanner input
         Scanner askForWholeInput = new Scanner(System.in);
         // import method from excisting class
-        int inputNumber = TakingANumber.AskForNumber("", -2147483648,
+        int inputNumber = TakingANumber.AskForNumber(new Scanner(System.in),"Enter a number in range of ", -2147483648,
                 2147483647);
         // ERROR! i've activated 2 scanner objects. 1ste one in the NIR.AFN class / method, secondly here in the IWN class,
         // when these 2 operate on the same function it creates an error because the NIR.AFN creates it's own scanner
