@@ -13,7 +13,6 @@ the method.
 public class TakingANumber {
     public static int AskForNumber(Scanner scanner, String text, Integer baseValue, Integer maxValue) {
         int inputInteger;
-
         do {
             System.out.println(text + baseValue + " to " + maxValue + " : ");
             inputInteger = scanner.nextInt();
@@ -23,7 +22,6 @@ public class TakingANumber {
             }
         }
         while (inputInteger < baseValue || inputInteger > maxValue);
-        //scanner.close();
         return inputInteger;
     }
 }

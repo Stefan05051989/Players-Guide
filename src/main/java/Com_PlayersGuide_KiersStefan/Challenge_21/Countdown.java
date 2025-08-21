@@ -1,4 +1,5 @@
 package Com_PlayersGuide_KiersStefan.Challenge_21;
+import Com_PlayersGuide_KiersStefan.Challenge_22.ThreadCountdown;
 
 /*
 Stefan Kiers
@@ -14,7 +15,7 @@ public class Countdown {
 //        for (int x = 10; x > 0; x--)
 //            System.out.println(x);
 
-        baseForRecursion(3);
+        baseForRecursion(5);
         /*
         Recursion is the technique of making the function call itself. You can break complicated problems down to
         simpeler one that are easier to solve.
@@ -26,13 +27,14 @@ public class Countdown {
 
     }
     // psv int called base
-    public static void baseForRecursion(int base) { // 2 usages, 1 = inside class, send is the call in main.
-        // if base is greater than / equal to 0, return to recursive method call in main class (baseForRecursion)
+    public static void baseForRecursion(int base) { // 2 usages, 1 = inside class, send is the call in run.
+        // if base is greater than / equal to 0, return to recursive method call in run class (baseForRecursion)
         if (base <= 0) {
             return;
         }
         // print base that carries value of the recursive method at that time!
-        System.out.println(base);
+        System.out.print(base + " ");
+        ThreadCountdown.waitSeconds(1);
         // start with 10, base -1, base becomes 9, base -1, base becomes 8 etc.
         // call the function again!
         baseForRecursion(base - 1);
@@ -44,8 +46,7 @@ public class Countdown {
         print statement for state of recursion
         baseFR - 1
         repeat function!
-        value is determined in main class as parameters (in this case, 10)
-
+        value is determined in run class as parameters (in this case, 10)
          */
     }
 }
