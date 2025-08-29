@@ -1,7 +1,7 @@
 package Com_PlayersGuide_KiersStefan.Challenge_22;
 import Com_PlayersGuide_KiersStefan.Challenge_16.ThePrototype;
 import Com_PlayersGuide_KiersStefan.Challenge_17.TheMagicCanon;
-import Com_PlayersGuide_KiersStefan.Challenge_20.TakingANumber;
+import Com_PlayersGuide_KiersStefan.Challenge_22.TakingANumberHTM;
 import Com_PlayersGuide_KiersStefan.Utils.Colours.Colours;
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ import java.util.Scanner;
 Stefan Kiers
 20-07-2025
 
-2 player run : Hunting the Manticore
+2 player main : Hunting the Manticore
 
 Objectives :
 1 : determine distance of Manticore from city (0 to 100)
@@ -48,7 +48,7 @@ public class HuntingManticoreGame {
 
             TheMagicCanon.Blast blast = canon.fire();
             System.out.println("Canon is expected to deal " + blast.damage + " this round!");
-            int target = TakingANumber.AskForNumber(scanner,"Guess the location for the manticore ", 0, 100);
+            int target = TakingANumberHTM.AskForNumber(scanner,"Guess the location for the manticore ", 0, 100);
 
                 if (target < manticoreLocation) {
                     System.out.println("Too low, guess again!");

@@ -22,7 +22,7 @@ public class TheDominionOfKings {
         String kingMelik = "Melik";
         String kingCasik = "Casik";
         String kingBalik = "Balik";
-        // boolean for returning to startingpoint of the run.
+        // boolean for returning to startingpoint of the main.
         boolean repeat = true;
         String selectedKing;
 

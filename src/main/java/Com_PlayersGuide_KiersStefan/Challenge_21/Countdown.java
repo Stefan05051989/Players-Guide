@@ -27,8 +27,8 @@ public class Countdown {
 
     }
     // psv int called base
-    public static void baseForRecursion(int base) { // 2 usages, 1 = inside class, send is the call in run.
-        // if base is greater than / equal to 0, return to recursive method call in run class (baseForRecursion)
+    public static void baseForRecursion(int base) { // 2 usages, 1 = inside class, send is the call in main.
+        // if base is greater than / equal to 0, return to recursive method call in main class (baseForRecursion)
         if (base <= 0) {
             return;
         }
@@ -46,7 +46,7 @@ public class Countdown {
         print statement for state of recursion
         baseFR - 1
         repeat function!
-        value is determined in run class as parameters (in this case, 10)
+        value is determined in main class as parameters (in this case, 10)
          */
     }
 }

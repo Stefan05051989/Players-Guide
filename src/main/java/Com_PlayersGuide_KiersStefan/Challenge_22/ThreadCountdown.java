@@ -4,7 +4,7 @@ package Com_PlayersGuide_KiersStefan.Challenge_22;
 Stefan Kiers
 20-08-2025
 
-wait # seconds method for countdown in hunting manticore run after clearing console.
+wait # seconds method for countdown in hunting manticore main after clearing console.
  */
 
 public class ThreadCountdown {

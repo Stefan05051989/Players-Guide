@@ -31,7 +31,7 @@ public class ThePrototype {
             System.out.println("Invalid input.");
             System.out.println("Enter a number between 0 and 100");
         } else {
-            // if correct, start run
+            // if correct, start main
             System.out.println("The Game starts in...");
             Countdown.baseForRecursion(5);
             ClearConsole.clearConsole(); // edited a countdown function for Thread.sleep before clearing console.

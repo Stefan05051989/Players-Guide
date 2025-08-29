@@ -7,7 +7,7 @@ Stefan Kiers
 Telim will share his bread with the city if you can build a program that
 lets him enter the names of those receiving it.
 
-A sample run of this program looks like this:
+A sample main of this program looks like this:
 
 Bread is ready.
 Who is the bread for?
