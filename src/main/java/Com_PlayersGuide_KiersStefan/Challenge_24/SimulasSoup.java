@@ -20,18 +20,14 @@ Stefan Kiers
 import java.util.Scanner;
 
 public class SimulasSoup {
-
     public static void main(String[] args) {
-        /*
-        enums are special class that represent fixed set of const. (data type like)
-
-         */
+        // enums are special class that represent fixed set of const. (data type like)
         // import scanner
         Scanner userChoice = new Scanner(System.in);
 
         // user choice for food type :
         System.out.println("Choose food type : ");
-        System.out.println("1 : Soup");
+        System.out.println("1 : Arrow");
         System.out.println("2 : Stew");
         System.out.println("3 : Gumbo");
 
