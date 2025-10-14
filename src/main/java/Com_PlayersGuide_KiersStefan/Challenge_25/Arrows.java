@@ -2,58 +2,8 @@ package Com_PlayersGuide_KiersStefan.Challenge_25;
 import Com_PlayersGuide_KiersStefan.Challenge_20.TakingANumber;
 import java.util.Scanner;
 
-enum Arrowhead {
-    STEEL, WOOD, OBSIDIAN
-}
-
-enum Fletching {
-    PLASTIC, TURKEYFEATHERS, GOOSEFEATHERS
-}
-
-record Arrow(int arrowLength, Arrowhead selectedArrowhead, Fletching fletchingChoice) {
-
-    public float getCost() {
-        float cost = 0;
-
-        // Arrowhead price
-        switch (selectedArrowhead) {
-            case STEEL:
-                cost += 10;
-                break;
-            case WOOD:
-                cost += 3;
-                break;
-            case OBSIDIAN:
-                cost += 5;
-                break;
-        }
-
-        // Fletching price
-        switch (fletchingChoice) {
-            case PLASTIC:
-                cost += 10;
-                break;
-            case TURKEYFEATHERS:
-                cost += 5;
-                break;
-            case GOOSEFEATHERS:
-                cost += 3;
-                break;
-        }
-        // Length price =  0.05 gold per centimeter
-        cost += arrowLength * 0.05f;
-
-        return cost;
-    }
-
-    @Override
-    public String toString() {
-        return arrowLength + "cm " + selectedArrowhead + " arrow with " + fletchingChoice + " fletching";
-    }
-}
-
 public class Arrows {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         Scanner userChoice = new Scanner(System.in);
         System.out.println("Hi there, I am Vin Fletcher.");
         System.out.println("Here you can choose your materials and length of the Arrow you wish.");
