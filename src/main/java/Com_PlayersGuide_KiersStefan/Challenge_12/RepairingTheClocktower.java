@@ -19,7 +19,8 @@ public class RepairingTheClocktower {
         System.out.println("Repairing the Clocktower.");
         //System.out.println("Check if a number is even or odd.");
 
-        int inputInteger = TakingANumber.AskForNumber(new Scanner(System.in), "Check if a number is even or odd from ", 0, 60);
+        int inputInteger = TakingANumber.AskForNumber(new Scanner(System.in),
+                "Check if a number is even or odd from ", 0, 60);
 
         // use if statement to check if condition is odd or even :
         if (inputInteger % 2 == 0){
