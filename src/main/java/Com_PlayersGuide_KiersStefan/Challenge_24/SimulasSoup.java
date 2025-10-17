@@ -103,28 +103,38 @@ public class SimulasSoup {
         userChoice.close();
 
     }
-    /*
-    Enums by itself are a group of constants (unchangeble / final variables!)
-    This means that the values of the enum can not be changed, but also that they
-    are instances. Which means you cannot instantiatie an enum to call it and print the content.
-    these have to be handled seperately.
 
-    Declare general class,
-    declare final Enum + name (Foodtype type)
+    enum FoodType {
+        SOUP, STEW, GUMBO;
+        /*
+        Each constant is a "public static final INSTANCE of an enum (in this case foodtype)
+        this is why you cannot instantiate an enum, because it carry's instances of constance.
+        Each enum has three aspects :
+        1 : singleton - only 1 can ever exist.
+        2 : Immutable - cannot be changed (same as strings)
+        3 : type-safe - can only be compared with other values from the same enum
+        (foodtype with foodtype, mainingredient with mainingredient, seasoning with seasoning.
+         */
+    }
 
-    create private method with parameters for calling varargs
-    this. etc
+    // create enum
+    enum MainIngredient {
+        // set constants for ingredient
+        MUSHROOM, CHICKEN, CARROT, POTATOE;
+    }
 
-    Then override the Enum with a ToString() method to display the formatted print statement.
-    without the to string method, it will print the Hashcode.
+    // create enum
+    enum Seasoning {
+        // set constants for flavour
+        SPICY, SWEET, SALTY;
+    }
 
-     */
-    static class Soup{
+    static class Soup {
         private final FoodType type;
         private final MainIngredient mainIngredient;
         private final Seasoning seasoning;
 
-        private Soup(FoodType type, MainIngredient mainIngredient, Seasoning seasoning){
+        private Soup(FoodType type, MainIngredient mainIngredient, Seasoning seasoning) {
             this.type = type;
             this.mainIngredient = mainIngredient;
             this.seasoning = seasoning;
@@ -136,43 +146,4 @@ public class SimulasSoup {
             return seasoning + " " + mainIngredient + " " + type;
         }
     }
-}
-// Create enum
- /*
-    Enums by itself are a group of constants (unchangeble / final variables!)
-    This means that the values of the enum can not be changed, but also that they
-    are instances. Which means you cannot instantiatie an enum to call it and print the content.
-    these have to be handled seperately.
-
-    Declare general class,
-    declare final Enum + name (Foodtype type)
-
-    create private method with parameters for calling varargs
-    this. etc
-
-    Then override the Enum with a ToString() method to display the formatted print statement.
-    without the to string method, it will print the Hashcode.
-
-  */
-enum FoodType {
-    SOUP, STEW, GUMBO;
-        /*
-        Each constant is a "public static final INSTANCE of an enum (in this case foodtype)
-        this is why you cannot instantiate an enum, because it carry's instances of constance.
-        Each enum has three aspects :
-        1 : singleton - only 1 can ever exist.
-        2 : Immutable - cannot be changed (same as strings)
-        3 : type-safe - can only be compared with other values from the same enum
-        (foodtype with foodtype, mainingredient with mainingredient, seasoning with seasoning.
-         */
-}
-// create enum
-enum MainIngredient {
-    // set constants for ingredient
-    MUSHROOM, CHICKEN, CARROT, POTATOE;
-}
-// create enum
-enum Seasoning {
-    // set constants for flavour
-    SPICY, SWEET, SALTY;
 }
